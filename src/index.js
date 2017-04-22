@@ -40,8 +40,7 @@ export default class ImagesLoaded extends Component {
 
 ImagesLoaded.defaultProps = {
   elementType: 'div',
-  className: 'images-loaded-container',
-  options: {}
+  className: 'images-loaded-container'
 };
 
 const propTypes = {
@@ -51,6 +50,5 @@ const propTypes = {
   onAlways: PropTypes.func,
   done: PropTypes.func,
   onFail: PropTypes.func,
-  onProgress: PropTypes.func,
-  options: PropTypes.object
+  onProgress: PropTypes.func
 };
