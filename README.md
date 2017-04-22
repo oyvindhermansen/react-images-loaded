@@ -14,12 +14,15 @@ you can set `elementType` as a prop on ` <ImagesLoaded />`
 
 <strong>Events</strong>
 
-events | Type
---- | --- | ---
-onAlways | function(instance)
-onProgress | function(instance, image)
-onFail | function(instance)
-done | function(instance)
+```
+onAlways(instance)
+
+onProgress(instance, image)
+
+onFail(instance)
+
+done(instance)
+```
 
 ## Example usage
 
