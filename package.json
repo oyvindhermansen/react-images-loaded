@@ -13,7 +13,7 @@
     "build": "NODE_ENV=production cross-env BABEL_ENV=commonjs babel src --out-dir lib"
   },
   "lint-staged": {
-    "src/*.js": [
+    "src/index.js": [
       "prettier --single-quote --write",
       "git add"
     ]
