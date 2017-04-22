@@ -34,7 +34,7 @@ export default class ImagesLoaded extends Component {
       <this.props.elementType ref={'elemContainer'} {...props}>
         {children}
       </this.props.elementType>
-    )
+    );
   }
 }
 
@@ -42,7 +42,7 @@ ImagesLoaded.defaultProps = {
   elementType: 'div',
   className: 'images-loaded-container',
   options: {}
-}
+};
 
 const propTypes = {
   loadingImages: PropTypes.func,
@@ -53,4 +53,4 @@ const propTypes = {
   onFail: PropTypes.func,
   onProgress: PropTypes.func,
   options: PropTypes.object
-}
+};
