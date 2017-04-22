@@ -2,8 +2,20 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import ImagesLoaded from '../src/index';
 
-class App extends Component {
+const Image = ({ src }) => {
+  return (
+    <img
+      src={src}
+      style={{
+        float: 'left',
+        width: '300px',
+        margin: '10px'
+      }}
+    />
+  )
+}
 
+class App extends Component {
   handleOnAlways = (instance) => {
     console.log('ALWAYS - all images have been loaded');
   }
@@ -24,7 +36,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        This is demo 2
         <ImagesLoaded
           elementType={'div'}
           onAlways={this.handleOnAlways}
@@ -33,9 +44,10 @@ class App extends Component {
           onProgress={this.handleOnProgress}
           className={'My-new-class'}
         >
-          <img src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAfUAAAAJGI4Mjg4ZDcwLWE1MDUtNDU2My04ODI5LTIzYTM1NzUxZDM5Yg.jpg" />
-          <img src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAfUAAAAJGI4Mjg4ZDcwLWE1MDUtNDU2My04ODI5LTIzYTM1NzUxZDM5Yg.jpg" />
-          <img src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAfUAAAAJGI4Mjg4ZDcwLWE1MDUtNDU2My04ODI5LTIzYTM1NzUxZDM5Yg.jpg" />
+          <Image src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAfUAAAAJGI4Mjg4ZDcwLWE1MDUtNDU2My04ODI5LTIzYTM1NzUxZDM5Yg.jpg" />
+          <Image src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAfUAAAAJGI4Mjg4ZDcwLWE1MDUtNDU2My04ODI5LTIzYTM1NzUxZDM5Yg.jpg" />
+          <Image src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAfUAAAAJGI4Mjg4ZDcwLWE1MDUtNDU2My04ODI5LTIzYTM1NzUxZDM5Yg.jpg" />
+          <Image src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAfUAAAAJGI4Mjg4ZDcwLWE1MDUtNDU2My04ODI5LTIzYTM1NzUxZDM5Yg.jpg" />
         </ImagesLoaded>
       </div>
     )
