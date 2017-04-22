@@ -6,6 +6,7 @@
 <small>Still missing some implementation details, but main functionality is ready.</small>
 
 <strong>Props</strong>
+
 <small>Supporting all standard props as `className`, `onClick`, `style` etc.</small>
 
 If you want to change the element type of the imagesLoaded container,
@@ -69,9 +70,11 @@ $ yarn install
 ```
 
 <strong>Local development</strong>
+
 Developing on this repo locally is a breeze. Just run `yarn demo`, and the webpack-dev-server will render demo. Here you can make changes in `/src`-folder and it will hot reload into the demo-page. Same goes for changes from `/demo/demo.js`.
 
 <strong>Testing</strong>
+
 Using `jest` because it's the `best` ;)
 
 `yarn test` for running the tests one time.
