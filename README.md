@@ -3,11 +3,9 @@
 <small>The [imagesLoaded](http://imagesloaded.desandro.com) library as a React Component</small>
 
 ## Current API
-<small>Still missing some implementation details, but main functionality is ready.</small>
+<small>Still missing some implementation details, but main functionality is working.</small>
 
 <strong>Props</strong>
-
-<small>Supporting all standard props as `className`, `onClick`, `style` etc.</small>
 
 If you want to change the element type of the imagesLoaded container,
 you can set `elementType` as a prop on ` <ImagesLoaded />`
@@ -82,3 +80,7 @@ Using `jest` because it's the `best` ;)
 
 `yarn test` for running the tests one time.
 `yarn test:watch` for running tests in watch mode
+
+<strong>Contribute</strong>
+
+Feel free to make pull requests or issues if something doesn't work/could be better :)

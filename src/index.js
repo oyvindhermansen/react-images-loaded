@@ -5,13 +5,13 @@ import omit from 'lodash.omit';
 
 export default class ImagesLoaded extends Component {
   componentDidMount() {
-    // add events
     const { onAlways, done, onFail, onProgress } = this.props;
     const { elemContainer } = this.refs;
 
     /* Initializing imagesLoaded */
     this.imagesLoaded = imagesLoaded(elemContainer);
 
+    // add events
     this.imagesLoaded.on('always', onAlways);
     this.imagesLoaded.on('done', done);
     this.imagesLoaded.on('fail', onFail);
@@ -21,6 +21,7 @@ export default class ImagesLoaded extends Component {
   componentWillUnmount() {
     const { onAlways, done, onFail, onProgress } = this.props;
 
+    // unbinding the events
     this.imagesLoaded.off('always', onAlways);
     this.imagesLoaded.off('done', done);
     this.imagesLoaded.off('fail', onFail);
