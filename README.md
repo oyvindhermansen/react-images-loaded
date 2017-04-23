@@ -3,7 +3,7 @@
 <small>The [imagesLoaded](http://imagesloaded.desandro.com) library as a React Component</small>
 
 ## Current API
-<small>Still missing some implementation details, but main functionality is working.</small>
+<small>Still missing some implementation details, but events is currently working.</small>
 
 <strong>Props</strong>
 
@@ -26,7 +26,7 @@ done(instance)
 
 ```jsx
 import React, { Component } from 'react';
-import ImagesLoaded from 'ImagesLoaded';
+import ImagesLoaded from 'react-images-loaded';
 
 class App extends Component {
   handleOnAlways = (instance) => {
@@ -56,7 +56,7 @@ class App extends Component {
       >
         {/* Your images */}
       </ImagesLoaded>
-    )
+    );
   }
 }
 ```
