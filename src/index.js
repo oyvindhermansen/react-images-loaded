@@ -6,8 +6,9 @@ import omit from 'lodash.omit';
 export default class ImagesLoaded extends Component {
   componentDidMount() {
     // add events
-    const { onAlways, done, onFail, onProgress, background } = this.props;
+    const { onAlways, done, onFail, onProgress } = this.props;
     const { elemContainer } = this.refs;
+
     /* Initializing imagesLoaded */
     this.imagesLoaded = imagesLoaded(elemContainer);
 
@@ -44,8 +45,6 @@ ImagesLoaded.defaultProps = {
 };
 
 const propTypes = {
-  loadingImages: PropTypes.func,
-  finishedLoading: PropTypes.func,
   elementType: PropTypes.string,
   onAlways: PropTypes.func,
   done: PropTypes.func,
