@@ -2,6 +2,8 @@
 
 <small>The [imagesLoaded](http://imagesloaded.desandro.com) library as a React Component</small>
 
+[![Build Status](https://travis-ci.org/oyvindhermansen/react-images-loaded.svg?branch=master)](https://travis-ci.org/oyvindhermansen/react-images-loaded)
+
 ## Current API
 <small>Still missing some implementation details, but events is currently working.</small>
 
@@ -22,11 +24,19 @@ onFail(instance)
 done(instance)
 ```
 
+
+
 ## Example usage
 
-```jsx
-import React, { Component } from 'react';
+```js
+// import using ES6 imports
 import ImagesLoaded from 'react-images-loaded';
+
+// import using ES5 require
+const ImagesLoaded = require('react-images-loaded');
+```
+
+```jsx
 
 class App extends Component {
   handleOnAlways = (instance) => {
