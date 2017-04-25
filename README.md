@@ -51,6 +51,7 @@ class App extends Component {
     return (
       <ImagesLoaded
         elementType={"ul"} // defaults to 'div'
+        className={"your-container-class"} // defaults to 'images-loaded-container'
         onAlways={this.handleOnAlways}
         onProgress={this.handleOnProgress}
         onFail={this.handleOnFail}
