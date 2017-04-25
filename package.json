@@ -1,6 +1,6 @@
 {
   "name": "react-images-loaded",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React bindings for imagesLoaded event system",
   "main": "./lib/index.js",
   "scripts": {
