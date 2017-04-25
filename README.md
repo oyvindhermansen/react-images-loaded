@@ -32,7 +32,7 @@ const ImagesLoaded = require('react-images-loaded');
 
 class App extends Component {
   handleOnAlways = (instance) => {
-    
+
   }
 
   handleOnProgress = (instance, image) => {
@@ -72,17 +72,18 @@ $ cd react-images-loaded
 $ yarn install
 ```
 
-<strong>Local development</strong>
-
+#### Local development
 This project is using webpack for development. Just run `yarn demo` and it will fire up a dev server with hot module reloading between `/demo/demo.js` and `/src/index.js`. This way it gets super simple to test the code you are writing.
 
-<strong>Testing</strong>
-
+#### Testing
 This project is using `jest` as testing framework.
 
 `yarn test` for running the tests one time.
 `yarn test:watch` for running tests in watch mode
 
-<strong>Contribute</strong>
+#### Code formatting
+This package is using `prettier` as code formatter. Just write your code, and prettier will take care of the formatting when you commit your changes.
+
+#### Contribute
 
 Feel free to make pull requests or issues if something doesn't work or could be better :)
