@@ -1,7 +1,7 @@
 {
   "name": "react-images-loaded",
   "version": "1.0.0",
-  "description": "The imagesLoaded library as a React Component",
+  "description": "React bindings for imagesLoaded event system",
   "main": "./lib/index.js",
   "scripts": {
     "test": "jest",
