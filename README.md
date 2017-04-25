@@ -1,18 +1,10 @@
 # React imagesLoaded
 
-<small>The [imagesLoaded](http://imagesloaded.desandro.com) library as a React Component</small>
+React bindings for [imagesLoaded](http://imagesloaded.desandro.com) event system
 
 [![Build Status](https://travis-ci.org/oyvindhermansen/react-images-loaded.svg?branch=master)](https://travis-ci.org/oyvindhermansen/react-images-loaded)
 
-## Current API
-<small>Still missing some implementation details, but events is currently working.</small>
-
-<strong>Props</strong>
-
-If you want to change the element type of the imagesLoaded container,
-you can set `elementType` as a prop on ` <ImagesLoaded />`
-
-<strong>Events</strong>
+## Events
 
 ```
 onAlways(instance)
@@ -29,14 +21,14 @@ done(instance)
 ## Example usage
 
 ```js
-// import using ES6 imports
+// ES6 imports
 import ImagesLoaded from 'react-images-loaded';
 
-// import using ES5 require
+// ES5 require
 const ImagesLoaded = require('react-images-loaded');
 ```
 
-```jsx
+```js
 
 class App extends Component {
   handleOnAlways = (instance) => {
@@ -59,6 +51,7 @@ class App extends Component {
     return (
       <ImagesLoaded
         elementType={"ul"} // defaults to 'div'
+        className={"your-container-class"} // defaults to 'images-loaded-container'
         onAlways={this.handleOnAlways}
         onProgress={this.handleOnProgress}
         onFail={this.handleOnFail}
@@ -71,7 +64,7 @@ class App extends Component {
 }
 ```
 
-## install and Contribute
+## Install for local development
 Defaulting to yarn, but npm works just as well.
 
 ```
@@ -80,17 +73,18 @@ $ cd react-images-loaded
 $ yarn install
 ```
 
-<strong>Local development</strong>
+#### Local development
+This project is using webpack for development. Just run `yarn demo` and it will fire up a dev server with hot module reloading between `/demo/demo.js` and `/src/index.js`. This way it gets super simple to test the code you are writing.
 
-Developing on this repo locally is a breeze. Just run `yarn demo`, and the webpack-dev-server will render demo. Here you can make changes in `/src`-folder and it will hot reload into the demo-page. Same goes for changes from `/demo/demo.js`.
-
-<strong>Testing</strong>
-
-Using `jest` because it's the `best` ;)
+#### Testing
+This project is using `jest` as testing framework.
 
 `yarn test` for running the tests one time.
 `yarn test:watch` for running tests in watch mode
 
-<strong>Contribute</strong>
+#### Code formatting
+This package is using `prettier` as code formatter. Just write your code, and prettier will take care of the formatting when you commit your changes.
 
-Feel free to make pull requests or issues if something doesn't work/could be better :)
+#### Contribute
+
+Feel free to make pull requests or issues if something doesn't work or could be better :)
