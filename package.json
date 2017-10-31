@@ -9,7 +9,7 @@
     "test:watch": "jest --watch",
     "prepublish": "npm run build",
     "demo": "webpack-dev-server --hot --inline --progress --colors",
-    "build": "NODE_ENV=production cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "build": "cross-env NODE_ENV=production BABEL_ENV=commonjs babel src --out-dir lib",
     "precommit": "lint-staged"
   },
   "lint-staged": {
