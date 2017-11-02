@@ -42,7 +42,8 @@ export default class ImagesLoaded extends Component {
 
 ImagesLoaded.defaultProps = {
   elementType: 'div',
-  className: 'images-loaded-container'
+  className: 'images-loaded-container',
+  background: false
 };
 
 const propTypes = {
