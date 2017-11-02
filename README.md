@@ -56,6 +56,7 @@ class App extends Component {
         onProgress={this.handleOnProgress}
         onFail={this.handleOnFail}
         done={this.handleDone}
+        background='.image' // true or child selector
       >
         {/* Your images */}
       </ImagesLoaded>
