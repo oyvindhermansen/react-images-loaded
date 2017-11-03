@@ -5,11 +5,11 @@ import omit from 'lodash.omit';
 
 export default class ImagesLoaded extends Component {
   componentDidMount() {
-    const { onAlways, done, onFail, onProgress } = this.props;
+    const { onAlways, done, onFail, onProgress, background } = this.props;
     const { elemContainer } = this.refs;
 
     /* Initializing imagesLoaded */
-    this.imagesLoaded = imagesLoaded(elemContainer);
+    this.imagesLoaded = imagesLoaded(elemContainer, { background });
 
     // add events
     this.imagesLoaded.on('always', onAlways);
@@ -42,7 +42,8 @@ export default class ImagesLoaded extends Component {
 
 ImagesLoaded.defaultProps = {
   elementType: 'div',
-  className: 'images-loaded-container'
+  className: 'images-loaded-container',
+  background: false
 };
 
 const propTypes = {
@@ -50,5 +51,6 @@ const propTypes = {
   onAlways: PropTypes.func,
   done: PropTypes.func,
   onFail: PropTypes.func,
-  onProgress: PropTypes.func
+  onProgress: PropTypes.func,
+  background: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
 };

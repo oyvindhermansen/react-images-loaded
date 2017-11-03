@@ -1,6 +1,6 @@
 {
   "name": "react-images-loaded",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "React bindings for imagesLoaded event system",
   "main": "./lib/index.js",
   "scripts": {
@@ -9,43 +9,36 @@
     "test:watch": "jest --watch",
     "prepublish": "npm run build",
     "demo": "webpack-dev-server --hot --inline --progress --colors",
-    "build": "NODE_ENV=production cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "build":
+      "cross-env NODE_ENV=production BABEL_ENV=commonjs babel src --out-dir lib",
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "src/index.js": [
-      "prettier --single-quote --write",
-      "git add"
-    ]
+    "src/index.js": ["prettier --single-quote --write", "git add"]
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oyvindhermansen/react-images-loaded.git"
   },
-  "keywords": [
-    "imagesLoaded",
-    "images",
-    "loading"
-  ],
-  "authors": [
-    "Øyvind Hermansen"
-  ],
+  "keywords": ["imagesLoaded", "images", "loading"],
+  "authors": ["Øyvind Hermansen"],
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.4.0",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.24.1",
-    "cross-env": "^4.0.0",
-    "husky": "^0.13.3",
-    "jest": "^19.0.2",
-    "lint-staged": "^3.4.0",
+    "cross-env": "^5.1.1",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "lint-staged": "^4.3.0",
     "prettier": "^1.2.2",
-    "react-dom": "^15.5.4",
-    "react-test-renderer": "^15.5.4",
+    "react-dom": "^16.0.0",
+    "react-test-renderer": "^16.0.0",
     "webpack": "latest",
     "webpack-dev-server": "^2.4.4",
     "webpack-hot-middleware": "^2.18.0"
@@ -54,6 +47,6 @@
     "imagesloaded": "^4.1.1",
     "lodash.omit": "^4.5.0",
     "prop-types": "^15.5.8",
-    "react": "^15.5.4"
+    "react": "^16.0.0"
   }
 }

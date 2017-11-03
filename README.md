@@ -4,48 +4,36 @@ React bindings for [imagesLoaded](http://imagesloaded.desandro.com) event system
 
 [![Build Status](https://travis-ci.org/oyvindhermansen/react-images-loaded.svg?branch=master)](https://travis-ci.org/oyvindhermansen/react-images-loaded)
 
-## Events
+## Props
 
-```
-onAlways(instance)
-
-onProgress(instance, image)
-
-onFail(instance)
-
-done(instance)
-```
-
-
+| Name      | Type | 
+------------|------|
+|onAlways   | Function
+|onProgress | Function
+|onFail     | Function
+|done       | Function
+|background | String / Boolean
 
 ## Example usage
 
 ```js
-// ES6 imports
+// ES6
 import ImagesLoaded from 'react-images-loaded';
 
-// ES5 require
+// ES5
 const ImagesLoaded = require('react-images-loaded');
 ```
 
 ```js
 
 class App extends Component {
-  handleOnAlways = (instance) => {
+  handleOnAlways = (instance) => {}
 
-  }
+  handleOnProgress = (instance, image) => {}
 
-  handleOnProgress = (instance, image) => {
+  handleOnFail = (instance) => {}
 
-  }
-
-  handleOnFail = (instance) => {
-
-  }
-
-  handleDone = (instance) => {
-
-  }
+  handleDone = (instance) => {}
 
   render() {
     return (
@@ -56,6 +44,7 @@ class App extends Component {
         onProgress={this.handleOnProgress}
         onFail={this.handleOnFail}
         done={this.handleDone}
+        background='.image' // true or child selector
       >
         {/* Your images */}
       </ImagesLoaded>
@@ -86,5 +75,4 @@ This project is using `jest` as testing framework.
 This package is using `prettier` as code formatter. Just write your code, and prettier will take care of the formatting when you commit your changes.
 
 #### Contribute
-
 Feel free to make pull requests or issues if something doesn't work or could be better :)

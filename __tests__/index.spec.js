@@ -38,7 +38,8 @@ describe('ImagesLoaded Component', () => {
 
     const defaultProps = {
       className: 'images-loaded-container',
-      elementType: 'div'
+      elementType: 'div',
+      background: false
     };
 
     expect(component.props).toEqual(defaultProps);
