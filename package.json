@@ -9,19 +9,27 @@
     "test:watch": "jest --watch",
     "prepublish": "npm run build",
     "demo": "webpack-dev-server --hot --inline --progress --colors",
-    "build":
-      "cross-env NODE_ENV=production BABEL_ENV=commonjs babel src --out-dir lib",
+    "build": "cross-env NODE_ENV=production BABEL_ENV=commonjs babel src --out-dir lib",
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "src/index.js": ["prettier --single-quote --write", "git add"]
+    "src/index.js": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oyvindhermansen/react-images-loaded.git"
   },
-  "keywords": ["imagesLoaded", "images", "loading"],
-  "authors": ["Øyvind Hermansen"],
+  "keywords": [
+    "imagesLoaded",
+    "images",
+    "loading"
+  ],
+  "authors": [
+    "Øyvind Hermansen"
+  ],
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -37,6 +45,7 @@
     "jest": "^21.2.1",
     "lint-staged": "^4.3.0",
     "prettier": "^1.2.2",
+    "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-test-renderer": "^16.0.0",
     "webpack": "latest",
@@ -46,7 +55,9 @@
   "dependencies": {
     "imagesloaded": "^4.1.1",
     "lodash.omit": "^4.5.0",
-    "prop-types": "^15.5.8",
-    "react": "^16.0.0"
+    "prop-types": "^15.5.8"
+  },
+  "peerDependencies": {
+    "react": "^15.0.0"
   }
 }
