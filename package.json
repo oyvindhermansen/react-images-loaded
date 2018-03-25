@@ -15,10 +15,7 @@
     "storybook": "start-storybook -p 9001 -c stories"
   },
   "repository": "git@github.com:oyvindhermansen/react-images-loaded.git",
-  "keywords": [
-    "react",
-    "form"
-  ],
+  "keywords": ["react", "imagesloaded"],
   "author": "Øyvind Hermansen <oyvindher@gmail.com>",
   "license": "MIT",
   "jest": {
