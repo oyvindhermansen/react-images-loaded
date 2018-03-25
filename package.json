@@ -1,6 +1,6 @@
 {
   "name": "react-images-loaded",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "React bindings for the imagesloaded library",
   "main": "dist/index.js",
   "scripts": {
@@ -15,7 +15,10 @@
     "storybook": "start-storybook -p 9001 -c stories"
   },
   "repository": "git@github.com:oyvindhermansen/react-images-loaded.git",
-  "keywords": ["react", "imagesloaded"],
+  "keywords": [
+    "react",
+    "imagesloaded"
+  ],
   "author": "Øyvind Hermansen <oyvindher@gmail.com>",
   "license": "MIT",
   "jest": {
