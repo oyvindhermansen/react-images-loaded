@@ -62,10 +62,6 @@ $ cd react-images-loaded
 $ yarn install
 ```
 
-#### Local development
-
-If you want to make changed to the src
-
 #### Testing
 
 This project is using `jest` as testing framework.
