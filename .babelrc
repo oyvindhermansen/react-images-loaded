@@ -1,7 +1,6 @@
 {
   "presets": ["env", "react"],
   "plugins": [
-    "transform-flow-strip-types",
     "babel-plugin-transform-class-properties",
     "transform-object-rest-spread"
   ]
