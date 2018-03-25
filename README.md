@@ -2,7 +2,7 @@
 
 React bindings for [imagesLoaded](http://imagesloaded.desandro.com) event system
 
-[![Build Status](https://travis-ci.org/oyvindhermansen/react-images-loaded.svg?branch=master)](https://travis-ci.org/oyvindhermansen/react-images-loaded)
+[![Build Status](https://travis-ci.org/oyvindhermansen/react-images-loaded.svg?branch=master)](https://travis-ci.org/oyvindhermansen/react-images-loaded) [![codecov](https://codecov.io/gh/oyvindhermansen/react-images-loaded/branch/master/graph/badge.svg)](https://codecov.io/gh/oyvindhermansen/react-images-loaded)
 
 ## Props
 
