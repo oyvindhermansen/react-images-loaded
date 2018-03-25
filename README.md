@@ -2,17 +2,17 @@
 
 React bindings for [imagesLoaded](http://imagesloaded.desandro.com) event system
 
-[![Build Status](https://travis-ci.org/oyvindhermansen/react-images-loaded.svg?branch=master)](https://travis-ci.org/oyvindhermansen/react-images-loaded)
+[![Build Status](https://travis-ci.org/oyvindhermansen/react-images-loaded.svg?branch=master)](https://travis-ci.org/oyvindhermansen/react-images-loaded) [![codecov](https://codecov.io/gh/oyvindhermansen/react-images-loaded/branch/master/graph/badge.svg)](https://codecov.io/gh/oyvindhermansen/react-images-loaded)
 
 ## Props
 
-| Name      | Type | 
-------------|------|
-|onAlways   | Function
-|onProgress | Function
-|onFail     | Function
-|done       | Function
-|background | String / Boolean
+| Name       | Type             |
+| ---------- | ---------------- |
+| onAlways   | Function         |
+| onProgress | Function         |
+| onFail     | Function         |
+| done       | Function         |
+| background | String / Boolean |
 
 ## Example usage
 
@@ -25,26 +25,25 @@ const ImagesLoaded = require('react-images-loaded');
 ```
 
 ```js
-
 class App extends Component {
-  handleOnAlways = (instance) => {}
+  handleOnAlways = instance => {};
 
-  handleOnProgress = (instance, image) => {}
+  handleOnProgress = (instance, image) => {};
 
-  handleOnFail = (instance) => {}
+  handleOnFail = instance => {};
 
-  handleDone = (instance) => {}
+  handleDone = instance => {};
 
   render() {
     return (
       <ImagesLoaded
-        elementType={"ul"} // defaults to 'div'
-        className={"your-container-class"} // defaults to 'images-loaded-container'
+        elementType={'ul'} // defaults to 'div'
+        className={'your-container-class'} // defaults to 'images-loaded-container'
         onAlways={this.handleOnAlways}
         onProgress={this.handleOnProgress}
         onFail={this.handleOnFail}
         done={this.handleDone}
-        background='.image' // true or child selector
+        background=".image" // true or child selector
       >
         {/* Your images */}
       </ImagesLoaded>
@@ -54,6 +53,7 @@ class App extends Component {
 ```
 
 ## Install for local development
+
 Defaulting to yarn, but npm works just as well.
 
 ```
@@ -63,16 +63,20 @@ $ yarn install
 ```
 
 #### Local development
-This project is using webpack for development. Just run `yarn demo` and it will fire up a dev server with hot module reloading between `/demo/demo.js` and `/src/index.js`. This way it gets super simple to test the code you are writing.
+
+If you want to make changed to the src
 
 #### Testing
+
 This project is using `jest` as testing framework.
+
+#### Storybook
+
+This project is using `storybook` as UI testing framework.
 
 `yarn test` for running the tests one time.
 `yarn test:watch` for running tests in watch mode
 
-#### Code formatting
-This package is using `prettier` as code formatter. Just write your code, and prettier will take care of the formatting when you commit your changes.
-
 #### Contribute
+
 Feel free to make pull requests or issues if something doesn't work or could be better :)

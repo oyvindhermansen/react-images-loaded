@@ -1,31 +1,27 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
-import ImagesLoaded from '../src/index';
+import ImagesLoaded from '../../src/index';
 
-const Image = ({ src }) => {
-  return <img src={src} />;
+const Image = ({ src, style }) => {
+  return <img style={style} src={src} />;
 };
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      images: [
-        {
-          src: 'https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAfUAAAAJGI4Mjg4ZDcwLWE1MDUtNDU2My04ODI5LTIzYTM1NzUxZDM5Yg.jpg'
-        },
-        {
-          src: 'https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAfUAAAAJGI4Mjg4ZDcwLWE1MDUtNDU2My04ODI5LTIzYTM1NzUxZDM5Yg.jpg'
-        },
-        {
-          src: 'https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAfUAAAAJGI4Mjg4ZDcwLWE1MDUtNDU2My04ODI5LTIzYTM1NzUxZDM5Yg.jpg'
-        },
-        {
-          src: 'https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAfUAAAAJGI4Mjg4ZDcwLWE1MDUtNDU2My04ODI5LTIzYTM1NzUxZDM5Yg.jpg'
-        }
-      ]
-    };
-  }
+export default class FullPackage extends Component {
+  state = {
+    images: [
+      {
+        src: 'http://via.placeholder.com/200x200'
+      },
+      {
+        src: 'http://via.placeholder.com/200x200'
+      },
+      {
+        src: 'http://via.placeholder.com/200x200'
+      },
+      {
+        src: 'http://via.placeholder.com/200x200'
+      }
+    ]
+  };
 
   handleOnAlways = instance => {
     console.log('ALWAYS - all images have been loaded');
@@ -47,7 +43,7 @@ class App extends Component {
   renderImages() {
     const { images } = this.state;
     return images.map((item, index) => {
-      return <Image key={index} src={item.src} />;
+      return <Image style={{ margin: 10 }} key={index} src={item.src} />;
     });
   }
 
@@ -76,5 +72,3 @@ class App extends Component {
     );
   }
 }
-
-render(<App />, document.getElementById('root'));

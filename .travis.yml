@@ -1,8 +1,9 @@
 language: node_js
 node_js:
-  - "4"
   - "6"
   - "7"
+  - "8"
 script:
   - npm run test
+  - npm run coverage-report
   - npm run build

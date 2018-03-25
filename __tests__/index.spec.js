@@ -4,37 +4,31 @@ import ReactTestUtils from 'react-dom/test-utils';
 import ImagesLoaded from '../src/index';
 
 describe('ImagesLoaded Component', () => {
-
   it('should render without crashing', () => {
     const mountNode = document.createElement('div');
     render(<ImagesLoaded />, mountNode);
-  })
+  });
 
   it('should render children', () => {
-    const testChildren = [ 'div', 'section', 'img' ];
+    const testChildren = ['div', 'section', 'img'];
     const component = ReactTestUtils.renderIntoDocument(
       <ImagesLoaded>
-        {
-          testChildren.map((item, index) => {
-            return (
-              <div key={index} className={"child"}></div>
-            )
-          })
-        }
+        {testChildren.map((item, index) => {
+          return <div key={index} className={'child'} />;
+        })}
       </ImagesLoaded>
     );
 
     const children = ReactTestUtils.scryRenderedDOMComponentsWithClass(
       component,
       'child'
-    )
+    );
 
     expect(children.length).toEqual(3);
-
-  })
+  });
 
   it('should set the correct default props', () => {
-    const component = ReactTestUtils.renderIntoDocument(<ImagesLoaded/>);
+    const component = ReactTestUtils.renderIntoDocument(<ImagesLoaded />);
 
     const defaultProps = {
       className: 'images-loaded-container',
@@ -43,7 +37,7 @@ describe('ImagesLoaded Component', () => {
     };
 
     expect(component.props).toEqual(defaultProps);
-  })
+  });
 
   it('should render with the correct elementType', () => {
     const defaultComponent = ReactTestUtils.renderIntoDocument(
@@ -51,30 +45,26 @@ describe('ImagesLoaded Component', () => {
     );
 
     const componentWithList = ReactTestUtils.renderIntoDocument(
-      <ImagesLoaded elementType={"ul"} />
+      <ImagesLoaded elementType={'ul'} />
     );
 
     expect(
-      ReactTestUtils.scryRenderedDOMComponentsWithTag(
-        defaultComponent,
-        'div'
-      ).length
-    ).toBeTruthy()
+      ReactTestUtils.scryRenderedDOMComponentsWithTag(defaultComponent, 'div')
+        .length
+    ).toBeTruthy();
 
     expect(
-      ReactTestUtils.scryRenderedDOMComponentsWithTag(
-        componentWithList,
-        'ul'
-      ).length
-    ).toBeTruthy()
+      ReactTestUtils.scryRenderedDOMComponentsWithTag(componentWithList, 'ul')
+        .length
+    ).toBeTruthy();
 
     expect(
       ReactTestUtils.scryRenderedDOMComponentsWithTag(
         componentWithList,
         'section'
       ).length
-    ).toBeFalsy()
-  })
+    ).toBeFalsy();
+  });
 
   it('should render with the correct className', () => {
     const defaultComponent = ReactTestUtils.renderIntoDocument(
@@ -82,7 +72,7 @@ describe('ImagesLoaded Component', () => {
     );
 
     const customComponentClass = ReactTestUtils.renderIntoDocument(
-      <ImagesLoaded className={"my-custom-class"} />
+      <ImagesLoaded className={'my-custom-class'} />
     );
 
     expect(
@@ -90,15 +80,13 @@ describe('ImagesLoaded Component', () => {
         defaultComponent,
         'images-loaded-container'
       ).length
-    ).toBeTruthy()
+    ).toBeTruthy();
 
     expect(
       ReactTestUtils.scryRenderedDOMComponentsWithClass(
         customComponentClass,
         'my-custom-class'
       ).length
-    ).toBeTruthy()
-
-  })
-
-})
+    ).toBeTruthy();
+  });
+});
