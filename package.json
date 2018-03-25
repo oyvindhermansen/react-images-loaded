@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage",
+    "coverage-report": "npm run coverage && codecov",
     "test:watch": "jest --watch",
     "prepublish": "npm run build",
     "build": "npm test && npm run build:clean && npm run build:dist",
@@ -20,6 +21,10 @@
   ],
   "author": "Øyvind Hermansen <oyvindher@gmail.com>",
   "license": "MIT",
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
+  },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "imagesloaded": "^4.1.4",
@@ -33,6 +38,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
+    "codecov": "^3.0.0",
     "jest": "^22.4.3",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
