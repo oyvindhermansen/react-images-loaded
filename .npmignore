@@ -1,6 +1,9 @@
 src
-demo
+example
 coverage
+docs
+stories
+storybook-static
 __tests__
 .babelrc
 .travis.yml

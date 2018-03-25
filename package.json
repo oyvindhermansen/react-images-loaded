@@ -1,52 +1,43 @@
 {
   "name": "react-images-loaded",
   "version": "1.1.0",
-  "description": "React bindings for imagesLoaded event system",
-  "main": "./lib/index.js",
+  "description": "React bindings for the imagesloaded library",
+  "main": "dist/index.js",
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "prepublish": "npm run build",
-    "demo": "webpack-dev-server --hot --inline --progress --colors",
-    "build":
-      "cross-env NODE_ENV=production BABEL_ENV=commonjs babel src --out-dir lib",
-    "precommit": "lint-staged"
+    "build": "npm test && npm run build:clean && npm run build:dist",
+    "build:clean": "rimraf dist",
+    "build:dist": "babel -d dist src --ignore '**/__tests__/**'",
+    "storybook": "start-storybook -p 9001 -c stories"
   },
-  "lint-staged": {
-    "src/index.js": ["prettier --single-quote --write", "git add"]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/oyvindhermansen/react-images-loaded.git"
-  },
-  "keywords": ["imagesLoaded", "images", "loading"],
-  "authors": ["Øyvind Hermansen"],
+  "repository": "git@github.com:oyvindhermansen/react-images-loaded.git",
+  "keywords": ["react", "form"],
+  "author": "Øyvind Hermansen <oyvindher@gmail.com>",
   "license": "MIT",
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-loader": "^7.0.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.4.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-register": "^6.24.1",
-    "cross-env": "^5.1.1",
-    "husky": "^0.14.3",
-    "jest": "^21.2.1",
-    "lint-staged": "^4.3.0",
-    "prettier": "^1.2.2",
-    "react-dom": "^16.0.0",
-    "react-test-renderer": "^16.0.0",
-    "webpack": "latest",
-    "webpack-dev-server": "^2.4.4",
-    "webpack-hot-middleware": "^2.18.0"
-  },
   "dependencies": {
-    "imagesloaded": "^4.1.1",
-    "lodash.omit": "^4.5.0",
-    "prop-types": "^15.5.8",
-    "react": "^16.0.0"
+    "babel-polyfill": "^6.26.0",
+    "imagesloaded": "^4.1.4",
+    "lodash.omit": "^4.5.0"
+  },
+  "devDependencies": {
+    "@storybook/react": "^3.4.0-alpha.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^22.4.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-test-renderer": "^16.2.0",
+    "rimraf": "^2.6.2"
+  },
+  "peerDependencies": {
+    "react": ">=15"
   }
 }
