@@ -4,6 +4,11 @@ import ReactTestUtils from 'react-dom/test-utils';
 import ImagesLoaded from '../src/index';
 
 describe('ImagesLoaded Component', () => {
+  afterEach(() => {
+    const component = ReactTestUtils.renderIntoDocument(<ImagesLoaded />);
+    component.componentWillUnmount();
+  });
+
   it('should render without crashing', () => {
     const mountNode = document.createElement('div');
     render(<ImagesLoaded />, mountNode);
