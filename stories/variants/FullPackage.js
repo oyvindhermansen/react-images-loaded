@@ -23,6 +23,17 @@ export default class FullPackage extends Component {
     ]
   };
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        images: [
+          ...this.state.images,
+          { src: 'http://via.placeholder.com/200x200' }
+        ]
+      });
+    }, 3000);
+  }
+
   handleOnAlways = instance => {
     console.log('ALWAYS - all images have been loaded');
   };
@@ -47,6 +58,10 @@ export default class FullPackage extends Component {
     });
   }
 
+  onUpdate = () => {
+    console.log('UPDATE - Children has updated and rerendered.');
+  };
+
   render() {
     const containerStyles = {
       display: 'flex',
@@ -63,6 +78,7 @@ export default class FullPackage extends Component {
           done={this.handleDone}
           onFail={this.handleOnFail}
           onProgress={this.handleOnProgress}
+          onUpdate={this.onUpdate}
           className={'My-new-class'}
           background={'.hey'}
         >

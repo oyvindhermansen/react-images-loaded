@@ -1,12 +1,53 @@
 import React from 'react';
-import { render } from 'react-dom';
 import ReactTestUtils from 'react-dom/test-utils';
 import ImagesLoaded from '../src/index';
+import renderer from 'react-test-renderer';
 
-describe('ImagesLoaded Component', () => {
-  it('should render without crashing', () => {
-    const mountNode = document.createElement('div');
-    render(<ImagesLoaded />, mountNode);
+describe('<ImagesLoaded />', () => {
+  it('should render and work.', async () => {
+    const done = jest.fn();
+    const onAlways = jest.fn();
+    const onFail = jest.fn();
+    const onProgress = jest.fn();
+    const onUpdate = jest.fn();
+
+    const component = renderer.create(
+      <ImagesLoaded
+        done={done}
+        onAlways={onAlways}
+        onFail={onFail}
+        onProgress={onProgress}
+        onUpdate={onUpdate}
+      >
+        {['img1.jpg'].map((item, index) => <img key={index} src={item} />)}
+      </ImagesLoaded>
+    );
+
+    expect(component.toJSON()).toMatchSnapshot();
+
+    const instance = component.getInstance();
+    const cWU = jest.spyOn(instance, 'componentWillUnmount');
+    const cDU = jest.spyOn(instance, 'componentDidUpdate');
+
+    component.update(
+      <ImagesLoaded
+        done={done}
+        onAlways={onAlways}
+        onFail={onFail}
+        onProgress={onProgress}
+        onUpdate={onUpdate}
+      >
+        {['img1.jpg', 'img2.jpg'].map((item, index) => (
+          <img key={index} src={item} />
+        ))}
+      </ImagesLoaded>
+    );
+
+    expect(cDU).toHaveBeenCalled();
+
+    component.unmount();
+
+    expect(cWU).toHaveBeenCalled();
   });
 
   it('should render children', () => {
@@ -64,29 +105,5 @@ describe('ImagesLoaded Component', () => {
         'section'
       ).length
     ).toBeFalsy();
-  });
-
-  it('should render with the correct className', () => {
-    const defaultComponent = ReactTestUtils.renderIntoDocument(
-      <ImagesLoaded />
-    );
-
-    const customComponentClass = ReactTestUtils.renderIntoDocument(
-      <ImagesLoaded className={'my-custom-class'} />
-    );
-
-    expect(
-      ReactTestUtils.scryRenderedDOMComponentsWithClass(
-        defaultComponent,
-        'images-loaded-container'
-      ).length
-    ).toBeTruthy();
-
-    expect(
-      ReactTestUtils.scryRenderedDOMComponentsWithClass(
-        customComponentClass,
-        'my-custom-class'
-      ).length
-    ).toBeTruthy();
   });
 });

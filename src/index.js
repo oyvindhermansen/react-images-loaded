@@ -4,18 +4,39 @@ import imagesLoaded from 'imagesloaded';
 import omit from 'lodash.omit';
 
 export default class ImagesLoaded extends Component {
-  componentDidMount() {
+  setEvents = () => {
     const { onAlways, done, onFail, onProgress, background } = this.props;
-    const { elemContainer } = this.refs;
-
-    /* Initializing imagesLoaded */
-    this.imagesLoaded = imagesLoaded(elemContainer, { background });
 
     // add events
     this.imagesLoaded.on('always', onAlways);
     this.imagesLoaded.on('done', done);
     this.imagesLoaded.on('fail', onFail);
     this.imagesLoaded.on('progress', onProgress);
+  };
+
+  initImagesLoaded = () => {
+    const { background } = this.props;
+    const { elemContainer } = this.refs;
+
+    /* Initializing imagesLoaded */
+    this.imagesLoaded = imagesLoaded(elemContainer, { background });
+    this.setEvents();
+  };
+
+  componentDidMount() {
+    this.initImagesLoaded();
+  }
+
+  componentDidUpdate(prevProps) {
+    const { onUpdate } = this.props;
+    if (prevProps.children !== this.props.children) {
+      // Do a re-initialization of the imagesLoaded instance.
+      // This may be useful if components that
+      // are using this needs to update
+      // images in children in result of a state change.
+      this.initImagesLoaded();
+      onUpdate();
+    }
   }
 
   componentWillUnmount() {
@@ -52,5 +73,6 @@ const propTypes = {
   done: PropTypes.func,
   onFail: PropTypes.func,
   onProgress: PropTypes.func,
+  onUpdate: PropTypes.func,
   background: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
 };

@@ -12,6 +12,7 @@ React bindings for [imagesLoaded](http://imagesloaded.desandro.com) event system
 | onProgress | Function         |
 | onFail     | Function         |
 | done       | Function         |
+| onUpdate   | Function         |
 | background | String / Boolean |
 
 ## Example usage
@@ -34,6 +35,8 @@ class App extends Component {
 
   handleDone = instance => {};
 
+  handleOnUpdate = () => {};
+
   render() {
     return (
       <ImagesLoaded
@@ -43,6 +46,7 @@ class App extends Component {
         onProgress={this.handleOnProgress}
         onFail={this.handleOnFail}
         done={this.handleDone}
+        onUpdate={this.handleOnUpdate}
         background=".image" // true or child selector
       >
         {/* Your images */}
