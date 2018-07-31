@@ -4,15 +4,6 @@ import imagesLoaded from 'imagesloaded';
 import omit from 'lodash.omit';
 
 export default class ImagesLoaded extends Component {
-  initImagesLoaded = () => {
-    const { background } = this.props;
-    const { elemContainer } = this.refs;
-
-    /* Initializing imagesLoaded */
-    this.imagesLoaded = imagesLoaded(elemContainer, { background });
-    this.setEvents();
-  };
-
   setEvents = () => {
     const { onAlways, done, onFail, onProgress, background } = this.props;
 
@@ -21,6 +12,15 @@ export default class ImagesLoaded extends Component {
     this.imagesLoaded.on('done', done);
     this.imagesLoaded.on('fail', onFail);
     this.imagesLoaded.on('progress', onProgress);
+  };
+
+  initImagesLoaded = () => {
+    const { background } = this.props;
+    const { elemContainer } = this.refs;
+
+    /* Initializing imagesLoaded */
+    this.imagesLoaded = imagesLoaded(elemContainer, { background });
+    this.setEvents();
   };
 
   componentDidMount() {
