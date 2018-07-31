@@ -58,6 +58,10 @@ export default class FullPackage extends Component {
     });
   }
 
+  onUpdate = () => {
+    console.log('UPDATE - Children has updated and rerendered.');
+  };
+
   render() {
     const containerStyles = {
       display: 'flex',
@@ -74,6 +78,7 @@ export default class FullPackage extends Component {
           done={this.handleDone}
           onFail={this.handleOnFail}
           onProgress={this.handleOnProgress}
+          onUpdate={this.onUpdate}
           className={'My-new-class'}
           background={'.hey'}
         >

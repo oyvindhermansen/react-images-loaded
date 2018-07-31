@@ -28,12 +28,14 @@ export default class ImagesLoaded extends Component {
   }
 
   componentDidUpdate(prevProps) {
+    const { onUpdate } = this.props;
     if (prevProps.children !== this.props.children) {
       // Do a re-initialization of the imagesLoaded instance.
       // This may be useful if components that
       // are using this needs to update
       // images in children in result of a state change.
       this.initImagesLoaded();
+      onUpdate();
     }
   }
 
@@ -71,5 +73,6 @@ const propTypes = {
   done: PropTypes.func,
   onFail: PropTypes.func,
   onProgress: PropTypes.func,
+  onUpdate: PropTypes.func,
   background: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
 };
