@@ -28,11 +28,11 @@ export default class ImagesLoaded extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps !== this.props) {
-      // Do a re-initialization of imagesLoaded instance
-      // to fire events again. This may be useful if
-      // components that are using this, and needs to update
-      // images in result of e.g a state change.
+    if (prevProps.children !== this.props.children) {
+      // Do a re-initialization of the imagesLoaded instance.
+      // This may be useful if components that
+      // are using this needs to update
+      // images in children in result of a state change.
       this.initImagesLoaded();
     }
   }
