@@ -4,18 +4,37 @@ import imagesLoaded from 'imagesloaded';
 import omit from 'lodash.omit';
 
 export default class ImagesLoaded extends Component {
-  componentDidMount() {
-    const { onAlways, done, onFail, onProgress, background } = this.props;
+  initImagesLoaded = () => {
+    const { background } = this.props;
     const { elemContainer } = this.refs;
 
     /* Initializing imagesLoaded */
     this.imagesLoaded = imagesLoaded(elemContainer, { background });
+    this.setEvents();
+  };
+
+  setEvents = () => {
+    const { onAlways, done, onFail, onProgress, background } = this.props;
 
     // add events
     this.imagesLoaded.on('always', onAlways);
     this.imagesLoaded.on('done', done);
     this.imagesLoaded.on('fail', onFail);
     this.imagesLoaded.on('progress', onProgress);
+  };
+
+  componentDidMount() {
+    this.initImagesLoaded();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      // Do a re-initialization of imagesLoaded instance
+      // to fire events again. This may be useful if
+      // components that are using this, and needs to update
+      // images in result of e.g a state change.
+      this.initImagesLoaded();
+    }
   }
 
   componentWillUnmount() {

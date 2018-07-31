@@ -23,6 +23,17 @@ export default class FullPackage extends Component {
     ]
   };
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        images: [
+          ...this.state.images,
+          { src: 'http://via.placeholder.com/300x300' }
+        ]
+      });
+    }, 3000);
+  }
+
   handleOnAlways = instance => {
     console.log('ALWAYS - all images have been loaded');
   };
