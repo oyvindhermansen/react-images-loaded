@@ -28,7 +28,7 @@ export default class FullPackage extends Component {
       this.setState({
         images: [
           ...this.state.images,
-          { src: 'http://via.placeholder.com/300x300' }
+          { src: 'http://via.placeholder.com/200x200' }
         ]
       });
     }, 3000);
